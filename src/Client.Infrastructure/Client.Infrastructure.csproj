@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="11.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.16" />
+		<PackageReference Include="MudBlazor" Version="6.3.1" />
+		<PackageReference Include="Blazored.LocalStorage" Version="4.1.5" />
+		<PackageReference Include="Toolbelt.Blazor.HttpClientInterceptor" Version="10.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Client.Application\Client.Application.csproj" />
+		<ProjectReference Include="..\Shared\GlobalShared.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Routes\" />
+	</ItemGroup>
+</Project>

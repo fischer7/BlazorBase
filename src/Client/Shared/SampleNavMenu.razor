@@ -1,0 +1,19 @@
+﻿@using System.Security.Claims
+@using Client.Infrastructure.Managers.Preferences
+@using Client.Infrastructure.Authentication
+
+@inject IDialogService DialogService
+
+@*TODO: Put User Card back*@
+<UserCard />
+<MudNavMenu>
+    <MudNavLink Href="/home" Icon="@Icons.Material.Outlined.Home">Home</MudNavLink>
+    <MudListSubheader Class="mt-2 mb-n2">Personal Data</MudListSubheader>
+    <MudNavLink Href="/search-person" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.FilterAlt">
+        Person Search
+    </MudNavLink>
+    <MudNavLink Href="/person" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Outlined.SupervisorAccount">
+        Person Information
+    </MudNavLink>
+    @*#ExtraNavLinks*@
+</MudNavMenu>

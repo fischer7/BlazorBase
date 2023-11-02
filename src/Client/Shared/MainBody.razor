@@ -1,0 +1,58 @@
+﻿
+<MudAppBar Elevation="25">
+    <MudText Typo="Typo.h6" Class="ml-4">Fischer</MudText>
+    <MudToolBar DisableGutters="true">
+        <MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())" Class="ml-3" />
+    </MudToolBar>
+    <MudSpacer />
+    <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+        @*<MudTooltip Text="Facebook">
+            <MudIconButton Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" Link="https://www.facebook.com/Fischer/" Target="_blank" />
+        </MudTooltip>
+        <MudTooltip Text="LinkedIn">
+            <MudIconButton Icon="@CustomIcons.LinkedInSvg" Color="Color.Inherit" Link="https://www.linkedin.com/company/Fischer" Target="_blank" />
+        </MudTooltip>*@
+        <MudTooltip Text="Fischer">
+            <MudIconButton Icon="@CustomIcons.WWW" Color="Color.Inherit" Link="https://www.Fischer.com.br/" Target="_blank" />
+        </MudTooltip>
+        <MudDivider Vertical="true" FlexItem="true" DividerType="DividerType.Middle" Class="mx-4 my-5" />
+        <MudTooltip Text="Toggle Dark Mode">
+            <MudIconButton Icon="@Icons.Material.Filled.Brightness4" Color="Color.Inherit" OnClick="@((e) => ToggleDarkMode())" />
+        </MudTooltip>
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.SmAndDown" Invert="true">
+        <MudMenu Icon="@Icons.Material.Filled.Settings" Color="Color.Inherit" Dense="true">
+            <div class="px-2">
+                <MudIconButton Icon="@Icons.Material.Filled.Brightness4" Color="Color.Inherit" Title="Toggle Dark Mode" OnClick="@((e) => ToggleDarkMode())" />
+            </div>
+            <MudMenuItem Link="https://www.Fischer.com.br" Target="_blank">Fischer</MudMenuItem>
+        </MudMenu>
+    </MudHidden>
+    @*TODO: User Avatar*@
+    @*<MudMenu AnchorOrigin="_rightToLeft ? MudBlazor.Origin.CenterRight : MudBlazor.Origin.CenterLeft" 
+            OffsetX="true" Dense="true" Class="mt-1 ml-4">
+        <ActivatorContent>
+            @if (string.IsNullOrEmpty(ImageDataUrl))
+            {
+                <MudAvatar Color="Color.Secondary">@FirstLetterOfName</MudAvatar>
+            }
+            else
+            {
+                <MudAvatar Image="@ImageDataUrl" Style="height:50px; width:50px;"> </MudAvatar>
+            }
+        </ActivatorContent>
+        <ChildContent>
+            <UserCard Class="mt-n2" />
+            <MudDivider Class="mb-2" />
+            <MudListItem Text="Logout" Icon="@Icons.Material.Filled.Logout" OnClick="Logout" />
+        </ChildContent>
+    </MudMenu>*@
+</MudAppBar>
+<MudDrawer @bind-Open="_drawerOpen" Elevation="25" ClipMode="DrawerClipMode.Always">
+    <NavMenu/>
+</MudDrawer>
+<MudMainContent>
+    <MudContainer MaxWidth="MaxWidth.False" Class="mt-4">
+        @ChildContent
+    </MudContainer>
+</MudMainContent>

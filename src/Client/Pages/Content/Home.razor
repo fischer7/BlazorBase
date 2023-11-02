@@ -1,0 +1,31 @@
+﻿@page "/"
+@page "/home"
+@inject NavigationManager NavManager
+
+<MudContainer>
+    <MudGrid>
+        <MudItem xs="12" sm="12" md="12">
+            <div class="d-flex justify-center mt-4">
+                <MudIcon Icon="@CustomIcons.CustomIcon" Color="Color.Primary" Size="Size.Large" ViewBox="0 0 500 500" Style="width: 200px; height: 200px;" />
+            </div>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12">
+            <MudText Align="Align.Center" Typo="Typo.h2">Fischer</MudText>
+            <MudText Align="Align.Center" Typo="Typo.h5" Class="smaller">This is the Fischer web application</MudText>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12">
+            <MudText Align="Align.Center">
+                Navigate at the menu to find out what you can do!
+            </MudText>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12">
+            <MudExpansionPanels>
+                <MudExpansionPanel Text="Getting Started" MaxHeight="150">
+                    Go to ... and create your own ....
+                    <MudButton Variant="Variant.Text" DisableElevation="true" Color="Color.Secondary" Link="/search-person">Click here.</MudButton>
+                </MudExpansionPanel>
+            </MudExpansionPanels>
+        </MudItem>
+        <div style="margin:50px"></div>
+    </MudGrid>
+</MudContainer>

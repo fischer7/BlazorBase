@@ -1,0 +1,26 @@
+﻿@namespace Client.Shared.Components
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.DeleteForever" Class="mr-3 mb-n1" />
+            @MudDialog.Title
+        </MudText>
+    </TitleContent>
+    <DialogContent >
+        <MudText>Are you sure you want to delete?</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel"><div style="margin-right:5px;margin-left:5px">Cancel</div></MudButton>
+        <MudButton Color="Color.Error" Variant="Variant.Filled" OnClick="Submit">Delete</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code
+{
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+
+    void Cancel() => MudDialog.Cancel();
+}
